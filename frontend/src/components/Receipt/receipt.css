@@ -1,0 +1,27 @@
+.receipt-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.receipt-card h2 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.receipt-card h3 {
+  color: forestgreen;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.receipt-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 10px;
+}
