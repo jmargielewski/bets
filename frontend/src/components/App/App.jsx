@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Main from './Main/Main';
-import Header from './Header/Header';
-import Receipt from './Receipt/Receipt';
+import Main from '../Main/Main';
+import Header from '../Header/Header';
+import Receipt from '../../containers/Receipt/Receipt';
 import './App.css';
 
 const App = () => (

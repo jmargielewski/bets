@@ -1,22 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Filters from '../Filters/Filters';
-import VisiblePlayerList from '../VisiblePlayerList/VisiblePlayerList';
-
+import BetsList from '../../containers/BetsList/BetsList';
 import './main.css';
 
-class Main extends Component {
-  componentDidMount() {
-    console.log('');
-  }
-
-  render() {
-    return (
-      <div className="site-content">
-        <Filters />
-        <VisiblePlayerList />
-      </div>
-    );
-  }
-}
+const Main = () => (
+  <div className="site-content">
+    <Filters />
+    <BetsList />
+  </div>
+);
 
 export default Main;

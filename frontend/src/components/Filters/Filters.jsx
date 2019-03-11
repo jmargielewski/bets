@@ -1,19 +1,27 @@
 import React from 'react';
-import FilterLink from './FilterLink';
-import { DECIMAL_ODDS_LESS_THAN_TWO, DECIMAL_ODDS_MORE_THAN_TWO } from '../../redux/actions/types';
+import { NavLink } from 'react-router-dom';
+import {
+  DECIMAL_ODDS_LESS_THAN_TWO,
+  DECIMAL_ODDS_MORE_THAN_TWO,
+} from '../../redux/actions/types';
+import './filter.css';
 
 const Filters = () => (
-  <p>
-    Choose filter:
-    {' '}
-    <FilterLink filter={DECIMAL_ODDS_LESS_THAN_TWO}>
-      <button style={{ padding: 10 }}>Less than 2</button>
-    </FilterLink>
-    {'  '}
-    <FilterLink filter={DECIMAL_ODDS_MORE_THAN_TWO}>
-      <button style={{ padding: 10 }}>More than 2</button>
-    </FilterLink>
-  </p>
+  <div className="dropdown-wrap">
+    <div className="dropdown">
+      <button className="dropdown-toggle" type="button">
+        Filters
+      </button>
+      <div className="dropdown-menu">
+        <NavLink className="dropdown-item" to={DECIMAL_ODDS_LESS_THAN_TWO}>
+          Less than 2
+        </NavLink>
+        <NavLink className="dropdown-item" to={DECIMAL_ODDS_MORE_THAN_TWO}>
+          More than 2
+        </NavLink>
+      </div>
+    </div>
+  </div>
 );
 
 export default Filters;

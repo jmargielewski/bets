@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 
+app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
@@ -16,8 +18,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(cors());
-
 const reqPath = path.join(__dirname, "./data/data.json");
 const bets = JSON.parse(fs.readFileSync(reqPath, "utf8")).bets;
 
@@ -27,11 +27,11 @@ const getDecimal = cb =>
     .filter(Boolean);
 
 app.get("/decimalOddsMoreThanTwo", (req, res) => {
-  res.send(getDecimal((v, limit) => v > limit));
+  res.send(getDecimal((value, limit) => value > limit));
 });
 
 app.get("/decimalOddsLessThanTwo", (req, res) => {
-  res.send(getDecimal((v, limit) => v < limit));
+  res.send(getDecimal((value, limit) => value < limit));
 });
 
 app.listen(4000, () => {

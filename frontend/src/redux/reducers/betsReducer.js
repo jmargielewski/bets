@@ -1,10 +1,10 @@
 import {
-  GET_BETS,
-  GET_BETS_SUCCESS,
-  GET_BETS_FAILURE,
+  FETCH_BETS,
+  FETCH_BETS_SUCCESS,
+  FETCH_BETS_FAILURE,
 } from '../actions/types';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   loading: false,
   data: null,
   errorMessage: '',
@@ -12,11 +12,11 @@ const INITIAL_STATE = {
 
 const betsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case GET_BETS:
+    case FETCH_BETS:
       return { ...state, loading: true };
-    case GET_BETS_SUCCESS:
+    case FETCH_BETS_SUCCESS:
       return { ...state, loading: false, data: action.payload };
-    case GET_BETS_FAILURE:
+    case FETCH_BETS_FAILURE:
       return { ...state, loading: false, errorMessage: action.payload };
     default:
       return state;

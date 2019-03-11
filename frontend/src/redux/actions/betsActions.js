@@ -1,24 +1,22 @@
 import axios from 'axios';
-import { GET_BETS, GET_BETS_SUCCESS, GET_BETS_FAILURE } from './types';
+import { FETCH_BETS, FETCH_BETS_SUCCESS, FETCH_BETS_FAILURE } from './types';
 
-const getBetsSuccess = response => ({
-  type: GET_BETS_SUCCESS,
+const fetchBetsSuccess = response => ({
+  type: FETCH_BETS_SUCCESS,
   payload: response,
 });
 
-const getBetsFailure = e => ({
-  type: GET_BETS_FAILURE,
-  payload: e,
+const fetchBetsFailure = err => ({
+  type: FETCH_BETS_FAILURE,
+  payload: err,
 });
 
-export const getBets = filter => async (dispatch) => {
-  dispatch({ type: GET_BETS });
+export const fetchBets = filter => async (dispatch) => {
+  dispatch({ type: FETCH_BETS });
   try {
     const response = await axios.get(`http://localhost:4000/${filter}`);
-    dispatch(getBetsSuccess(response.data));
-  } catch (e) {
-    dispatch(getBetsFailure(e));
+    dispatch(fetchBetsSuccess(response.data));
+  } catch (err) {
+    dispatch(fetchBetsFailure(err));
   }
 };
-
-export default 's';

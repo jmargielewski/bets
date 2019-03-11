@@ -1,0 +1,78 @@
+.bets-list {
+  list-style: outside none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bets-item {
+  float: left;
+  padding: 10px;
+  width: 100%;
+}
+
+.bets-card {
+  background: #f6f7f7;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bets-title {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.bets-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.odds {
+  font-weight: 800;
+}
+
+.bets-input {
+  width: 85px;
+  height: 40px;
+  padding-left: 5px;
+  max-width: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #9d9da3;
+}
+
+.bets-input:focus {
+  outline-color: #00cdbc;
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  border: 0;
+  background: #00b5a6;
+  margin: auto;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  background: #01c6b5;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 650px) {
+  .bets-item {
+    width: 50%;
+  }
+}

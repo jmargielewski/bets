@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { DECIMAL_ODDS_LESS_THAN_TWO } from '../../redux/actions/types';
 import * as actions from '../../redux/actions';
-import getPlayers from '../../selector';
+import getBets from '../../selector';
 
-import './visiblePlayerList.css';
+import './betsList.css';
 
-class VisiblePlayerList extends Component {
+class BetsList extends Component {
   constructor(props) {
     super(props);
 
@@ -16,12 +16,12 @@ class VisiblePlayerList extends Component {
 
   componentDidMount() {
     const {
-      getBets,
+      fetchBets,
       match: {
         params: { filter },
       },
     } = this.props;
-    getBets(filter || DECIMAL_ODDS_LESS_THAN_TWO);
+    fetchBets(filter || DECIMAL_ODDS_LESS_THAN_TWO);
   }
 
   componentDidUpdate({
@@ -30,11 +30,11 @@ class VisiblePlayerList extends Component {
     },
   }) {
     const {
-      getBets,
+      fetchBets,
       match: { params },
     } = this.props;
     if (filter !== params.filter) {
-      getBets(params.filter);
+      fetchBets(params.filter);
     }
   }
 
@@ -49,45 +49,47 @@ class VisiblePlayerList extends Component {
   };
 
   render() {
-    const { players } = this.props;
-
+    const { bets } = this.props;
     return (
       <div>
-        <h2>List of bets</h2>
-        <ul className="player-list">
-          {players
-            && players.map(player => (
-              <li key={player.name} className="player-item">
-                <div className="player-card">
-                  <h2>{player.name}</h2>
-                  <h5>
-                    Best Odds Decimal:
-                    {player.maxOdds}
-                  </h5>
+        <hr />
+        <ul className="bets-list">
+          {bets
+            && bets.map(bet => (
+              <li key={bet.name} className="bets-item">
+                <div className="bets-card">
+                  <div>
+                    <h2 className="bets-title">{bet.name}</h2>
+                    <p className="bets-subtitle">
+                      Best Odds Decimal-
+                      <span className="odds">{bet.maxOdds}</span>
+                    </p>
+                  </div>
                   <input
-                    name={player.map}
+                    min="0"
                     type="number"
+                    name={bet.map}
+                    className="bets-input"
+                    placeholder="Set Stake"
                     onChange={this.onChange}
                   />
                 </div>
               </li>
             ))}
         </ul>
-        <button type="button" className="button js-add" onClick={this.onClick}>
-          Bet Now
+        <button type="button" className="button" onClick={this.onClick}>
+          Place Bet
         </button>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  players: getPlayers(state),
-});
+const mapStateToProps = state => ({ bets: getBets(state) });
 
 export default withRouter(
   connect(
     mapStateToProps,
     actions,
-  )(VisiblePlayerList),
+  )(BetsList),
 );

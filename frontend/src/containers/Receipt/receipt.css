@@ -1,0 +1,20 @@
+.receipt-card {
+  background: #f6f7f7;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.receipt-subtitle {
+  color: #64b356;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 15px 0;
+}
+
+.sum,
+.receipt-stake {
+  font-size: 16px;
+  font-weight: 800;
+}

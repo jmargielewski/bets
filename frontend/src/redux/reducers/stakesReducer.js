@@ -1,8 +1,8 @@
 import { SAVE_STAKES } from '../actions/types';
 
-const INITIAL_STATE = {};
+export const INITIAL_STATE = {};
 
-const betsReducer = (state = INITIAL_STATE, action) => {
+const stakesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SAVE_STAKES:
       return { ...action.payload };
@@ -11,4 +11,4 @@ const betsReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default betsReducer;
+export default stakesReducer;
