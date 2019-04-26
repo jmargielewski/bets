@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "8.11.3",
+    "yarn": "1.7.0"
+  },
   "scripts": {
     "preinstall": "cd frontend && yarn install",
     "start-server": "node ./api/server.js",
-    "start-frontend": "cd frontend && npm run start",
-    "dev": "concurrently -r -k \"npm run start-server\" \"npm run start-frontend\""
+    "start-frontend": "cd frontend && yarn run start",
+    "dev": "concurrently -r -k \"yarn run start-server\" \"yarn run start-frontend\"",
+    "start": "concurrently -r -k \"yarn run start-server\" \"yarn run start-frontend\""
   },
   "author": "",
   "license": "ISC",
