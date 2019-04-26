@@ -1,5 +1,5 @@
 {
-  "name": "react-betslip-code-test",
+  "name": "bets",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,6 @@
     "start-server": "node ./api/server.js",
     "start-frontend": "cd frontend && npm run start",
     "dev": "concurrently -r -k \"npm run start-server\" \"npm run start-frontend\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@git.cloud.oddschecker.com:ollie.ayre/react-betslip-code-test.git"
   },
   "author": "",
   "license": "ISC",
