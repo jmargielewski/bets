@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "cd frontend && npm install",
+    "preinstall": "cd frontend && yarn install",
     "start-server": "node ./api/server.js",
     "start-frontend": "cd frontend && npm run start",
     "dev": "concurrently -r -k \"npm run start-server\" \"npm run start-frontend\""
