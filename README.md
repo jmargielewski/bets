@@ -9,3 +9,4 @@
 - Redux
 - CSS
 - Jest / Enzyme
+- Hosting- Heroku
