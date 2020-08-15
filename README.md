@@ -1,7 +1,5 @@
 # bets
 
-[Live](https://bets-odds.herokuapp.com/decimalOddsMoreThanTwo)
-
 ### Technologies
 
 - Node / Express
@@ -9,4 +7,3 @@
 - Redux
 - CSS
 - Jest / Enzyme
-- Hosting- Heroku
